@@ -1,19 +1,25 @@
+import './NavBar.css'
 import CartWidget from "../CartWidget/CartWidget";
 import logo from './assets/logo.png'
-import './NavBar.css'
+import { NavLink, Link } from 'react-router-dom';
+
 
 const NavBar = () => {
     return (
-        <nav className="has-background-primary">           
+        <nav className="NavBar has-background-primary">           
 
-            <img className='logo_img' src={logo} alt="logo" />             
+            <img className='logo_img' src={logo} alt="logo" /> 
 
-            <h3 className="logo_text">Eco-Moda</h3>
+            <Link to='/'>
+                <h3 className="logo_text">Eco-Moda</h3>
+            </Link>            
 
-            <div>
-                <button className="btn button m-2 is-large is-responsive is-dark is-outlined is-rounded">Hombres</button>
-                <button className="btn button m-2 is-large is-responsive is-dark is-outlined is-rounded">Mujeres</button>
-                <button className="btn button m-2 is-large is-responsive is-dark is-outlined is-rounded">Niños</button>
+            <div className='Categories'>
+                <NavLink to={`/category/hombres`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Hombres</NavLink>
+                <NavLink to={`/category/mujeres`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Mujeres</NavLink>
+                <NavLink to={`/category/nios`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Niños</NavLink>
+
+                {/* estilos del boton : btn button m-2 is-large is-responsive is-dark is-outlined is-rounded */}
             </div>
 
             <CartWidget/>

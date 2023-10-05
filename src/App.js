@@ -1,15 +1,26 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import 'bulma/css/bulma.css'
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import "bulma/css/bulma.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting={'🙋‍♀️ Bienvenidos 🙋‍♂️'}/> 
-      <ItemDetailContainer/>
+      <BrowserRouter>
+        <NavBar />         
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting={'🙋‍♀️ Bienvenidos 🙋‍♂️'}/>}/> 
+          {/* Muestra todos los productos */}
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          {/* Muestra por categorias */}
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          {/* Muestra detalle del producto */}
+          <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+          {/* muestra un mje de error si no funcionan las rutas anteriores */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

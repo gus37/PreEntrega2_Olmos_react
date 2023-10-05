@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Item.css'
 
 const Item = ({id, name, img, price, stock}) => {
@@ -10,7 +11,7 @@ const Item = ({id, name, img, price, stock}) => {
                 </h2>
             </header>
             <picture className="card-img">
-                <img src={img} alt='nada' className='ItemImg card-image mt-3'/>
+                <img src={img} alt={name} className='ItemImg card-image mt-3'/>
             </picture>
             <section className="card-content">
                 <p className='Info is-size-3-desktop has-text-black'>
@@ -21,7 +22,7 @@ const Item = ({id, name, img, price, stock}) => {
                 </p>
             </section>
             <footer className='ItemFooter'>
-                <button className='Option btn button is-large is-responsive is-primary'>🌺 Ver detalle 🌺</button>
+                <Link to={`/item/${id}`} className='Option btn button is-large is-responsive is-primary'>🌺 Ver detalle 🌺</Link>
             </footer>
         </article>
     )
