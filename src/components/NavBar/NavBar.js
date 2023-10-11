@@ -15,9 +15,9 @@ const NavBar = () => {
             </Link>            
 
             <div className='Categories'>
-                <NavLink to={`/category/hombres`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Hombres</NavLink>
-                <NavLink to={`/category/mujeres`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Mujeres</NavLink>
-                <NavLink to={`/category/nios`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Niños</NavLink>
+                <NavLink to={`/category/'hombres'`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Hombres</NavLink>
+                <NavLink to={`/category/'mujeres'`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Mujeres</NavLink>
+                <NavLink to={`/category/'ninos'`} className={`btn button m-2 is-large is-responsive is-dark is-outlined is-rounded ${({isActive}) => isActive ? 'ActiveOption' : 'Option'}`}>Niños</NavLink>
 
                 {/* estilos del boton : btn button m-2 is-large is-responsive is-dark is-outlined is-rounded */}
             </div>

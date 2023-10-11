@@ -1,7 +1,7 @@
 import './ItemDetailContainer.css';
 import { useState, useEffect } from 'react';
-import { getProductById } from '../../asyncMock';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import { getProductById } from '../../asyncMock.js';
+import ItemDetail from '../ItemDetail/ItemDetail.js';
 import { useParams } from 'react-router-dom';
 
 function ItemDetailContainer () {
@@ -10,7 +10,7 @@ function ItemDetailContainer () {
 
     const { itemId } = useParams();
 
-    console.log('El ID de este producto es:', itemId);
+    // console.log('El ID de este producto es:', itemId);
 
     useEffect(()=> {
         getProductById(itemId)
